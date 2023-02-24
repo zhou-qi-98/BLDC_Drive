@@ -6,8 +6,8 @@
 * 采用三相逆变桥电路
 * 前级采用栅极驱动MOS，自带闭锁
 * 采集电机驱动电压，与MOS电流
-![image](4.Imgs/SCH1.png)
-![image](4.Imgs/SCH2.png)
+![image](/4.Imgs/SCH1.png)
+![image](/4.Imgs/SCH2.png)
 
 #### 版本更新
 * 【2023/2/24 16：26】 A01.05：原理图部分完成，网络标号已添加，请按要求添加封装
