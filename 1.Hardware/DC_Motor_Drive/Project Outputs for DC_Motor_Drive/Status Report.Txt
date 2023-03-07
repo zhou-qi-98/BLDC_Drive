@@ -1,0 +1,10 @@
+Output: Protel
+Type  : ProtelNetlist
+From  : Project [DC_Motor_Drive.PrjPcb]
+   Generated File[DC_Motor_Drive.NET]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 17:30:33 On 2023/3/6
