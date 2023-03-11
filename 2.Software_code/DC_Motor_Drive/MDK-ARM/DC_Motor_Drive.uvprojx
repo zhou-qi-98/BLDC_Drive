@@ -905,6 +905,11 @@
               <FileType>1</FileType>
               <FilePath>..\Core\MY\IIC.c</FilePath>
             </File>
+            <File>
+              <FileName>Get_ADC_Value.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\MY\Get_ADC_Value.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

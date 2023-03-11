@@ -36,4 +36,5 @@ dc_motor_drive\main.o: ../Core/Inc/usart.h
 dc_motor_drive\main.o: ../Core/Inc/gpio.h
 dc_motor_drive\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 dc_motor_drive\main.o: ../Core/MY/User_Scheduler.h
+dc_motor_drive\main.o: ../Core/MY/User_Function.h
 dc_motor_drive\main.o: ../Core/MY/IIC_OLED.h

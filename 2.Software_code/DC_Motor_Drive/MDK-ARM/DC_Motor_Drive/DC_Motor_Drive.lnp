@@ -28,6 +28,7 @@
 "dc_motor_drive\user_scheduler.o"
 "dc_motor_drive\iic_oled.o"
 "dc_motor_drive\iic.o"
+"dc_motor_drive\get_adc_value.o"
 --library_type=microlib --strict --scatter "DC_Motor_Drive\DC_Motor_Drive.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

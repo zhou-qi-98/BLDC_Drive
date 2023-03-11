@@ -1,7 +1,7 @@
 #include "User_Scheduler.h"
 
 #include "gpio.h"
-
+#include "Get_ADC_Value.h"
 
 SysScanFlag_T __align(4)tSysScanFlag;//系统扫描标志位
 
@@ -40,6 +40,7 @@ void FuncRun(SysScanFlag_T *_tSysScanFlag)/*功能运行*/
 	{
 		_tSysScanFlag->KEY_Scan_Flag = 0;
 		LED0_TOG;
+		get_adc_value();
 
 	}
 	

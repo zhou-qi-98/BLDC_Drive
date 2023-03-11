@@ -28,6 +28,7 @@
 //以下开始用户头文件，这里的头文件在MY文件夹内
 #include "stdio.h"
 #include "User_Scheduler.h"
+#include "User_Function.h"
 #include "IIC_OLED.h"
 /* USER CODE END Includes */
 
@@ -38,9 +39,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define VERSION      "A01.05"//主版本号子版本号.修正版本号
+#define VERSION      "A01.06"//主版本号子版本号.修正版本号
 /*---->
 版本更新历史：
+A01.06:采集四个通道的ADC数据(待验证) 2023/3/11 16:30
 A01.05:OLED移植成功(待验证) 2023/3/11 15:54
 A01.04:新增用户调度器(未验证) 2023/3/11 15:36
 A01.03:重写printf函数，修改至串口二 2023/3/11 15:19
@@ -119,6 +121,7 @@ int main(void)
 	OLED_Init();			//OLED初始化
 	OLED_CLS();				//OLED清屏
 	OLED_ShowStr(16,6,(unsigned char*)"SYS init succeeded      ",1);
+	user_main_info("系统初始化成功！");
   /* USER CODE END 2 */
 
   /* Infinite loop */

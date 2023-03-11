@@ -5,6 +5,7 @@
 #include "gpio.h"
 #include "usart.h"
 
+
 /*利用可变参数空重新定义打印信息*/
 #define USER_MAIN_DEBUG
 #ifdef USER_MAIN_DEBUG
