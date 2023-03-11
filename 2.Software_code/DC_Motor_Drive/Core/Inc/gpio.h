@@ -33,7 +33,15 @@ extern "C" {
 /* USER CODE END Includes */
 
 /* USER CODE BEGIN Private defines */
-
+#define LED0_OFF HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
+#define LED0_ON HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
+#define LED0_TOG HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_4);
+#define LED1_OFF HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+#define LED1_ON HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+#define LED1_TOG HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_5);
+#define BEEP_OFF HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+#define BEEP_ON HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+#define BEPP_TOG HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_6);
 /* USER CODE END Private defines */
 
 void MX_GPIO_Init(void);

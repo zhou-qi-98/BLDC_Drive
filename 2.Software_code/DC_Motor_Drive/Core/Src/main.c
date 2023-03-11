@@ -27,7 +27,7 @@
 /* USER CODE BEGIN Includes */
 //以下开始用户头文件，这里的头文件在MY文件夹内
 #include "stdio.h"
-//#include "User_Scheduler.h"
+#include "User_Scheduler.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -37,9 +37,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define VERSION      "A01.03"//主版本号子版本号.修正版本号
+#define VERSION      "A01.04"//主版本号子版本号.修正版本号
 /*---->
 版本更新历史：
+A01.04:新增用户调度器(未验证) 2023/3/11 15:36
 A01.03:重写printf函数，修改至串口二 2023/3/11 15:19
 A01.02:宏定义管LED,BEEP外设管脚 2023/3/11 15:06
 A01.01:新建工程，初始化外设 2023/3/11 14:55
@@ -50,7 +51,7 @@ A01.01:新建工程，初始化外设 2023/3/11 14:55
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
+volatile uint8_t SYS_TIME1S_FLAG = 0;//计数1s标志位
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -111,6 +112,7 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM1_Init();
   MX_USART2_UART_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -122,6 +124,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+		Schedule();						/*调度器*/
+		FuncRun(&tSysScanFlag);/*功能运行*/
   }
   /* USER CODE END 3 */
 }
@@ -173,6 +177,13 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+/*下面开始子函数*/
+/*中断服务函数*/
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+	if (htim->Instance == htim2.Instance) {//定时器1中断,这里1ms中断一次
+			SYS_TIME1S_FLAG=1;
+	}
+}
 
 /* USER CODE END 4 */
 

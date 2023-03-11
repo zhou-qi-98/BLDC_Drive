@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103x6</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Core/MY</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -883,6 +883,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>MY</GroupName>
+          <Files>
+            <File>
+              <FileName>User_Function.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\MY\User_Function.c</FilePath>
+            </File>
+            <File>
+              <FileName>User_Scheduler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\MY\User_Scheduler.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -901,5 +916,14 @@
     </components>
     <files/>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>DC_Motor_Drive</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>

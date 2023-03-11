@@ -24,6 +24,8 @@
 "dc_motor_drive\stm32f1xx_hal_tim_ex.o"
 "dc_motor_drive\stm32f1xx_hal_uart.o"
 "dc_motor_drive\system_stm32f1xx.o"
+"dc_motor_drive\user_function.o"
+"dc_motor_drive\user_scheduler.o"
 --library_type=microlib --strict --scatter "DC_Motor_Drive\DC_Motor_Drive.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
