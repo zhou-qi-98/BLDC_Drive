@@ -1,6 +1,10 @@
 --cpu Cortex-M3
 "dc_motor_drive\startup_stm32f103x6.o"
 "dc_motor_drive\main.o"
+"dc_motor_drive\gpio.o"
+"dc_motor_drive\adc.o"
+"dc_motor_drive\tim.o"
+"dc_motor_drive\usart.o"
 "dc_motor_drive\stm32f1xx_it.o"
 "dc_motor_drive\stm32f1xx_hal_msp.o"
 "dc_motor_drive\stm32f1xx_hal_gpio_ex.o"
@@ -20,7 +24,7 @@
 "dc_motor_drive\stm32f1xx_hal_tim_ex.o"
 "dc_motor_drive\stm32f1xx_hal_uart.o"
 "dc_motor_drive\system_stm32f1xx.o"
---strict --scatter "DC_Motor_Drive\DC_Motor_Drive.sct"
+--library_type=microlib --strict --scatter "DC_Motor_Drive\DC_Motor_Drive.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "DC_Motor_Drive.map" -o DC_Motor_Drive\DC_Motor_Drive.axf
