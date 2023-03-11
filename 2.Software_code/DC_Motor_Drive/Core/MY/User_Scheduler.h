@@ -2,6 +2,7 @@
 #define __USER_SCHEDULER_H__
 
 #include "stm32f1xx_hal.h"
+#include "iwdg.h"
 
 #define u8 uint8_t
 #define u16 uint16_t

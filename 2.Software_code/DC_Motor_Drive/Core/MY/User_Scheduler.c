@@ -55,6 +55,7 @@ void FuncRun(SysScanFlag_T *_tSysScanFlag)/*功能运行*/
 	{
 		_tSysScanFlag->LAG_Scan_Flag = 0;
 
-
+			HAL_IWDG_Refresh(&hiwdg); //喂狗：重装看门狗数据为4095. 6.5s未喂狗，程序复位
+			/*看门狗计算公式为  t = (64 * 4095) / 40kHz ≈ 6.5s*/
 	}	
 }

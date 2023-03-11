@@ -13,10 +13,10 @@ void get_adc_value()
 		HAL_ADC_PollForConversion(&hadc1,10);//轮询等待ADC转换完成
 		switch(i)//将四个通道的采样值存在结构体当中
 		{
-			case 0:ADC1_Value.Driving_V=HAL_ADC_GetValue(&hadc1);break;
-			case 1:ADC1_Value.Current_U=HAL_ADC_GetValue(&hadc1);break;
-			case 2:ADC1_Value.Current_V=HAL_ADC_GetValue(&hadc1);break;
-			case 3:ADC1_Value.Current_W=HAL_ADC_GetValue(&hadc1);break;
+			case 0:ADC1_Value.Driving_V=HAL_ADC_GetValue(&hadc1);break;//驱动电压
+			case 1:ADC1_Value.Current_U=HAL_ADC_GetValue(&hadc1);break;//U相电流
+			case 2:ADC1_Value.Current_V=HAL_ADC_GetValue(&hadc1);break;//V相电流
+			case 3:ADC1_Value.Current_W=HAL_ADC_GetValue(&hadc1);break;//W相电流
 			default:break;
 		}
 	}

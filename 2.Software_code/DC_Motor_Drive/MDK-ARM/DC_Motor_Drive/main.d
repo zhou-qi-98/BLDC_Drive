@@ -26,11 +26,13 @@ dc_motor_drive\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
 dc_motor_drive\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
 dc_motor_drive\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 dc_motor_drive\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+dc_motor_drive\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h
 dc_motor_drive\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 dc_motor_drive\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 dc_motor_drive\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 dc_motor_drive\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 dc_motor_drive\main.o: ../Core/Inc/adc.h
+dc_motor_drive\main.o: ../Core/Inc/iwdg.h
 dc_motor_drive\main.o: ../Core/Inc/tim.h
 dc_motor_drive\main.o: ../Core/Inc/usart.h
 dc_motor_drive\main.o: ../Core/Inc/gpio.h

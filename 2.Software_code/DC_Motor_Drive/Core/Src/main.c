@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "iwdg.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -39,16 +40,16 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define VERSION      "A01.06"//主版本号子版本号.修正版本号
+#define VERSION      "A01.07"//主版本号子版本号.修正版本号
 /*---->
 版本更新历史：
+A01.07: 新增看门狗，溢出时间约6.5s(待验证) 2023/3/11 16:42
 A01.06:采集四个通道的ADC数据(待验证) 2023/3/11 16:30
 A01.05:OLED移植成功(待验证) 2023/3/11 15:54
 A01.04:新增用户调度器(未验证) 2023/3/11 15:36
 A01.03:重写printf函数，修改至串口二 2023/3/11 15:19
 A01.02:宏定义管LED,BEEP外设管脚 2023/3/11 15:06
 A01.01:新建工程，初始化外设 2023/3/11 14:55
-
 */
 
 /* USER CODE END PD */
@@ -116,6 +117,7 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM1_Init();
   MX_USART2_UART_Init();
+  MX_IWDG_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 	OLED_Init();			//OLED初始化
@@ -150,10 +152,11 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_BYPASS;
   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
@@ -187,7 +190,7 @@ void SystemClock_Config(void)
 /*下面开始子函数*/
 /*中断服务函数*/
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-	if (htim->Instance == htim2.Instance) {//定时器1中断,这里1ms中断一次
+	if (htim->Instance == htim2.Instance) {//定时器2中断,这里1ms中断一次
 			SYS_TIME1S_FLAG=1;
 	}
 }
