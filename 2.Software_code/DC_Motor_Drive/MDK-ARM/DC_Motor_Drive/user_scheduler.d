@@ -31,7 +31,7 @@ dc_motor_drive\user_scheduler.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_h
 dc_motor_drive\user_scheduler.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 dc_motor_drive\user_scheduler.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 dc_motor_drive\user_scheduler.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
-dc_motor_drive\user_scheduler.o: ../Core/Inc/iwdg.h
-dc_motor_drive\user_scheduler.o: ../Core/Inc/main.h
 dc_motor_drive\user_scheduler.o: ../Core/Inc/gpio.h
+dc_motor_drive\user_scheduler.o: ../Core/Inc/main.h
+dc_motor_drive\user_scheduler.o: ../Core/Inc/iwdg.h
 dc_motor_drive\user_scheduler.o: ..\Core\MY\Get_ADC_Value.h

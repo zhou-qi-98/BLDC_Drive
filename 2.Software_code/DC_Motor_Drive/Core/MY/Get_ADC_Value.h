@@ -10,7 +10,8 @@ typedef struct
 }ADC_VALUE;
 
 
-void get_adc_value(void);
+void 
+	get_adc_value(void);
 
 #endif
 

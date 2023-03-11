@@ -1,7 +1,7 @@
 Dependencies for Project 'DC_Motor_Drive', Target 'DC_Motor_Drive': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f103x6.s)(0x640C3E87)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_DC_Motor_Drive-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include--pd "__UVISION_VERSION SETA 532" --pd "_RTE_ SETA 1" --pd "STM32F10X_LD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103x6.lst --xref -o dc_motor_drive\startup_stm32f103x6.o --depend dc_motor_drive\startup_stm32f103x6.d)
-F (../Core/Src/main.c)(0x640C3F04)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Core/MY-I.\RTE\_DC_Motor_Drive-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6-o dc_motor_drive\main.o --omf_browse dc_motor_drive\main.crf --depend dc_motor_drive\main.d)
+F (../Core/Src/main.c)(0x640C476A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Core/MY-I.\RTE\_DC_Motor_Drive-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6-o dc_motor_drive\main.o --omf_browse dc_motor_drive\main.crf --depend dc_motor_drive\main.d)
 I (../Core/Inc/main.h)(0x640C2A02)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x62D42893)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x640C3E83)
@@ -39,7 +39,8 @@ I (../Core/Inc/tim.h)(0x640C2E30)
 I (../Core/Inc/usart.h)(0x640C2A02)
 I (../Core/Inc/gpio.h)(0x640C2F00)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5F63877C)
-I (../Core/MY/User_Scheduler.h)(0x640C3EC0)
+I (../Core/MY/User_Scheduler.h)(0x640C3FC2)
+I (../Core/MY/Get_ADC_Value.h)(0x640C44AE)
 I (../Core/MY/User_Function.h)(0x640C3CAB)
 I (../Core/MY/IIC_OLED.h)(0x640C328B)
 F (../Core/Src/gpio.c)(0x640C2A00)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Core/MY-I.\RTE\_DC_Motor_Drive-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6-o dc_motor_drive\gpio.o --omf_browse dc_motor_drive\gpio.crf --depend dc_motor_drive\gpio.d)
@@ -866,8 +867,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x62D42893)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x62D42893)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x62D42893)
 I (../Core/Inc/usart.h)(0x640C2A02)
-F (..\Core\MY\User_Scheduler.c)(0x640C3EC9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Core/MY-I.\RTE\_DC_Motor_Drive-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6-o dc_motor_drive\user_scheduler.o --omf_browse dc_motor_drive\user_scheduler.crf --depend dc_motor_drive\user_scheduler.d)
-I (..\Core\MY\User_Scheduler.h)(0x640C3EC0)
+F (..\Core\MY\User_Scheduler.c)(0x640C437A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Core/MY-I.\RTE\_DC_Motor_Drive-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6-o dc_motor_drive\user_scheduler.o --omf_browse dc_motor_drive\user_scheduler.crf --depend dc_motor_drive\user_scheduler.d)
+I (..\Core\MY\User_Scheduler.h)(0x640C3FC2)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x62D42893)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x640C3E83)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x62D42893)
@@ -898,10 +899,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x62D42893)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x62D42893)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x62D42893)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x62D42893)
-I (../Core/Inc/iwdg.h)(0x640C3E82)
-I (../Core/Inc/main.h)(0x640C2A02)
 I (../Core/Inc/gpio.h)(0x640C2F00)
-I (..\Core\MY\Get_ADC_Value.h)(0x640C3BB0)
+I (../Core/Inc/main.h)(0x640C2A02)
+I (../Core/Inc/iwdg.h)(0x640C3E82)
+I (..\Core\MY\Get_ADC_Value.h)(0x640C44AE)
 F (..\Core\MY\IIC_OLED.c)(0x640C3335)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Core/MY-I.\RTE\_DC_Motor_Drive-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6-o dc_motor_drive\iic_oled.o --omf_browse dc_motor_drive\iic_oled.crf --depend dc_motor_drive\iic_oled.d)
 I (..\Core\MY\IIC.h)(0x640C3281)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x62D42893)
@@ -969,7 +970,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x62D42893)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x62D42893)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x62D42893)
 F (..\Core\MY\Get_ADC_Value.c)(0x640C3CD2)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Core/MY-I.\RTE\_DC_Motor_Drive-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6-o dc_motor_drive\get_adc_value.o --omf_browse dc_motor_drive\get_adc_value.crf --depend dc_motor_drive\get_adc_value.d)
-I (..\Core\MY\Get_ADC_Value.h)(0x640C3BB0)
+I (..\Core\MY\Get_ADC_Value.h)(0x640C44AE)
 I (../Core/Inc/main.h)(0x640C2A02)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x62D42893)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x640C3E83)

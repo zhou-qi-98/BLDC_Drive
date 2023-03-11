@@ -1,7 +1,5 @@
 #include "User_Scheduler.h"
 
-#include "gpio.h"
-#include "Get_ADC_Value.h"
 
 SysScanFlag_T __align(4)tSysScanFlag;//系统扫描标志位
 

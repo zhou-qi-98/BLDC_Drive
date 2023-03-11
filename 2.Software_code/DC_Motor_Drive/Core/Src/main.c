@@ -120,6 +120,7 @@ int main(void)
   MX_IWDG_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+	HAL_ADCEx_Calibration_Start(&hadc1); //ADC校准
 	OLED_Init();			//OLED初始化
 	OLED_CLS();				//OLED清屏
 	OLED_ShowStr(16,6,(unsigned char*)"SYS init succeeded      ",1);

@@ -2,7 +2,9 @@
 #define __USER_SCHEDULER_H__
 
 #include "stm32f1xx_hal.h"
+#include "gpio.h"
 #include "iwdg.h"
+#include "Get_ADC_Value.h"
 
 #define u8 uint8_t
 #define u16 uint16_t
