@@ -28,6 +28,7 @@
 //以下开始用户头文件，这里的头文件在MY文件夹内
 #include "stdio.h"
 #include "User_Scheduler.h"
+#include "IIC_OLED.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -37,9 +38,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define VERSION      "A01.04"//主版本号子版本号.修正版本号
+#define VERSION      "A01.05"//主版本号子版本号.修正版本号
 /*---->
 版本更新历史：
+A01.05:OLED移植成功(待验证) 2023/3/11 15:54
 A01.04:新增用户调度器(未验证) 2023/3/11 15:36
 A01.03:重写printf函数，修改至串口二 2023/3/11 15:19
 A01.02:宏定义管LED,BEEP外设管脚 2023/3/11 15:06
@@ -114,7 +116,9 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-
+	OLED_Init();			//OLED初始化
+	OLED_CLS();				//OLED清屏
+	OLED_ShowStr(16,6,(unsigned char*)"SYS init succeeded      ",1);
   /* USER CODE END 2 */
 
   /* Infinite loop */

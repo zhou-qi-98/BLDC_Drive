@@ -21,7 +21,6 @@
 
 
 
-void SEND(void);
 extern int fputc(int ch, FILE *f);
 
 #endif

@@ -895,6 +895,16 @@
               <FileType>1</FileType>
               <FilePath>..\Core\MY\User_Scheduler.c</FilePath>
             </File>
+            <File>
+              <FileName>IIC_OLED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\MY\IIC_OLED.c</FilePath>
+            </File>
+            <File>
+              <FileName>IIC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\MY\IIC.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
