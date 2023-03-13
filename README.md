@@ -7,7 +7,7 @@
 * 采集三相电流
 * 前级采用栅极驱动MOS，自带闭锁
 * 采集电机驱动电压，与MOS电流
-![image](/4.Imgs/渲染图1.png)
+![image](/4.Imgs/渲染图0.png)
 ![image](/4.Imgs/SCH1.png)
 ![image](/4.Imgs/SCH2.png)
 ![image](/4.Imgs/PCB.png)
