@@ -40,9 +40,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define VERSION      "A01.08"//主版本号子版本号.修正版本号
+#define VERSION      "A01.09"//主版本号子版本号.修正版本号
 /*---->
 版本更新历史：
+A01.09: 新增按键扫描函数(待验证) 2023/3/14 14:08
 A01.08: 新增ADC校准，规范代码(待验证) 2023/3/11 17:19
 A01.07: 新增看门狗，溢出时间约6.5s(待验证) 2023/3/11 16:42
 A01.06:采集四个通道的ADC数据(待验证) 2023/3/11 16:30
@@ -58,6 +59,7 @@ A01.01:新建工程，初始化外设 2023/3/11 14:55
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 volatile uint8_t SYS_TIME1S_FLAG = 0;//计数1s标志位
+int8_t led_status;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -80,7 +82,7 @@ void SystemClock_Config(void);
 /*-----------------------------------------*/
 int fputc(int ch, FILE *f){
 	uint8_t temp[1] = {ch};
-	HAL_UART_Transmit(&huart2, temp, 1, 2);//huart1需要根据你的配置修改
+	HAL_UART_Transmit(&huart2, temp, 1, 2);//huart2需要根据你的配置修改
 	return ch;
 }
 
@@ -118,14 +120,17 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM1_Init();
   MX_USART2_UART_Init();
-  MX_IWDG_Init();
+  //MX_IWDG_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+	HAL_TIM_Base_Start_IT(&htim2);//开启定时器
 	HAL_ADCEx_Calibration_Start(&hadc1); //ADC校准
-	OLED_Init();			//OLED初始化
-	OLED_CLS();				//OLED清屏
-	OLED_ShowStr(16,6,(unsigned char*)"SYS init succeeded      ",1);
+	//OLED_Init();			//OLED初始化
+	//OLED_CLS();				//OLED清屏
+	//OLED_ShowStr(16,6,(unsigned char*)"SYS init succeeded      ",1);
 	user_main_info("系统初始化成功！");
+	//MX_IWDG_Init();
+	//LED0_ON;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -135,8 +140,13 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		Schedule();						/*调度器*/
-		FuncRun(&tSysScanFlag);/*功能运行*/
+		LED1_ON;
+		HAL_Delay(10);
+		LED1_OFF;
+		HAL_Delay(10);
+		//Schedule();						/*调度器*/
+		//FuncRun(&tSysScanFlag);/*功能运行*/
+		
   }
   /* USER CODE END 3 */
 }
@@ -191,9 +201,11 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 /*下面开始子函数*/
 /*中断服务函数*/
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-	if (htim->Instance == htim2.Instance) {//定时器2中断,这里1ms中断一次
-			SYS_TIME1S_FLAG=1;
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) 
+	{
+			if (htim->Instance == htim2.Instance) {//定时器2中断,这里1ms中断一次
+					SYS_TIME1S_FLAG=1;
+			//LED1_TOG;
 	}
 }
 

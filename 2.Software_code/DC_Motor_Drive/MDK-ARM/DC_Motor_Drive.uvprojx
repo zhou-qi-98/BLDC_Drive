@@ -10,6 +10,7 @@
       <TargetName>DC_Motor_Drive</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pArmCC>5060960::V5.06 update 7 (build 960)::.\ARMCC</pArmCC>
       <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
@@ -1021,6 +1022,11 @@
               <FileName>Get_ADC_Value.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Core\MY\Get_ADC_Value.c</FilePath>
+            </File>
+            <File>
+              <FileName>key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\MY\key.c</FilePath>
             </File>
           </Files>
         </Group>

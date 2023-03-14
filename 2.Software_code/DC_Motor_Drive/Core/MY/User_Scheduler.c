@@ -38,14 +38,14 @@ void FuncRun(SysScanFlag_T *_tSysScanFlag)/*功能运行*/
 	{
 		_tSysScanFlag->KEY_Scan_Flag = 0;
 		LED0_TOG;
-		get_adc_value();
+		//get_adc_value();
 
 	}
 	
 	if(_tSysScanFlag->CTR_Scan_Flag)				//控制扫描
 	{
 		_tSysScanFlag->CTR_Scan_Flag = 0;
-		LED1_TOG;
+		//LED1_TOG;
 		
 	}
 	
@@ -55,7 +55,7 @@ void FuncRun(SysScanFlag_T *_tSysScanFlag)/*功能运行*/
 		BEEP_ON;
 		HAL_Delay(100);
 		BEEP_OFF;
-		HAL_IWDG_Refresh(&hiwdg); //喂狗：重装看门狗数据为4095. 6.5s未喂狗，程序复位
+		//HAL_IWDG_Refresh(&hiwdg); //喂狗：重装看门狗数据为4095. 6.5s未喂狗，程序复位
 		/*看门狗计算公式为  t = (64 * 4095) / 40kHz ≈ 6.5s*/
 	}	
 }
