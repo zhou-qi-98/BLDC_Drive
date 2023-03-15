@@ -34,6 +34,7 @@ void FuncRun(SysScanFlag_T *_tSysScanFlag)/*功能运行*/
 		_tSysScanFlag->ANA_Scan_Flag = 0;
 		
 		KEY_Value = Key_scan();
+		Get_EC11_Value();
 		
 	}
 	

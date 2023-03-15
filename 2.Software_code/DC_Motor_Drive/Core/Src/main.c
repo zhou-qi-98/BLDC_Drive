@@ -41,9 +41,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define VERSION      "A01.0A"//主版本号子版本号.修正版本号
+#define VERSION      "A01.0B"//主版本号子版本号.修正版本号
 /*---->
-版本更新历史：
+版本更新历史
+A01.0B: 编码器功能初步测试通过 2023/3/15 21:39
 A01.0A: 调度器/OLED等外设测试通过 2023/3/15 20:49
 A01.09: 新增按键扫描函数(待验证) 2023/3/14 14:08
 A01.08: 新增ADC校准，规范代码(待验证) 2023/3/11 17:19
@@ -127,7 +128,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(&htim2);//开启定时器
 	HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);     //启动计数
-
 	HAL_ADCEx_Calibration_Start(&hadc1); //ADC校准
 	BEEP_OFF;
 	OLED_Init();			//OLED初始化
@@ -210,6 +210,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			//LED1_TOG;
 	}
 }
+	
+
+
 
 /* USER CODE END 4 */
 
