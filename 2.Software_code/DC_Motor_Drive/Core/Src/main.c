@@ -31,6 +31,7 @@
 #include "User_Scheduler.h"
 #include "User_Function.h"
 #include "IIC_OLED.h"
+#include "key.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -40,18 +41,19 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define VERSION      "A01.09"//主版本号子版本号.修正版本号
+#define VERSION      "A01.0A"//主版本号子版本号.修正版本号
 /*---->
 版本更新历史：
+A01.0A: 调度器/OLED等外设测试通过 2023/3/15 20:49
 A01.09: 新增按键扫描函数(待验证) 2023/3/14 14:08
 A01.08: 新增ADC校准，规范代码(待验证) 2023/3/11 17:19
 A01.07: 新增看门狗，溢出时间约6.5s(待验证) 2023/3/11 16:42
-A01.06:采集四个通道的ADC数据(待验证) 2023/3/11 16:30
-A01.05:OLED移植成功(待验证) 2023/3/11 15:54
-A01.04:新增用户调度器(未验证) 2023/3/11 15:36
-A01.03:重写printf函数，修改至串口二 2023/3/11 15:19
-A01.02:宏定义管LED,BEEP外设管脚 2023/3/11 15:06
-A01.01:新建工程，初始化外设 2023/3/11 14:55
+A01.06: 采集四个通道的ADC数据(待验证) 2023/3/11 16:30
+A01.05: OLED移植成功(待验证) 2023/3/11 15:54
+A01.04: 新增用户调度器(未验证) 2023/3/11 15:36
+A01.03: 重写printf函数，修改至串口二 2023/3/11 15:19
+A01.02: 宏定义管LED,BEEP外设管脚 2023/3/11 15:06
+A01.01: 新建工程，初始化外设 2023/3/11 14:55
 */
 
 /* USER CODE END PD */
@@ -120,15 +122,19 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM1_Init();
   MX_USART2_UART_Init();
-  //MX_IWDG_Init();
+  MX_IWDG_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(&htim2);//开启定时器
+	HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);     //启动计数
+
 	HAL_ADCEx_Calibration_Start(&hadc1); //ADC校准
-	//OLED_Init();			//OLED初始化
-	//OLED_CLS();				//OLED清屏
-	//OLED_ShowStr(16,6,(unsigned char*)"SYS init succeeded      ",1);
+	BEEP_OFF;
+	OLED_Init();			//OLED初始化
+	OLED_CLS();				//OLED清屏
+	OLED_ShowStr(16,4,(unsigned char*)"SYS init succeeded      ",1);
 	user_main_info("系统初始化成功！");
+	MX_IWDG_Init();
 	//MX_IWDG_Init();
 	//LED0_ON;
   /* USER CODE END 2 */
@@ -140,12 +146,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		LED1_ON;
-		HAL_Delay(10);
-		LED1_OFF;
-		HAL_Delay(10);
-		//Schedule();						/*调度器*/
-		//FuncRun(&tSysScanFlag);/*功能运行*/
+		Schedule();						/*调度器*/
+		FuncRun(&tSysScanFlag);/*功能运行*/
 		
   }
   /* USER CODE END 3 */
@@ -165,7 +167,7 @@ void SystemClock_Config(void)
   * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
-  RCC_OscInitStruct.HSEState = RCC_HSE_BYPASS;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.LSIState = RCC_LSI_ON;

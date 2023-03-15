@@ -33,3 +33,8 @@ dc_motor_drive\key.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 dc_motor_drive\key.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 dc_motor_drive\key.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 dc_motor_drive\key.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+dc_motor_drive\key.o: ../Core/Inc/tim.h
+dc_motor_drive\key.o: ../Core/Inc/usart.h
+dc_motor_drive\key.o: ..\Core\MY\User_Function.h
+dc_motor_drive\key.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+dc_motor_drive\key.o: ..\Core\MY\key.h

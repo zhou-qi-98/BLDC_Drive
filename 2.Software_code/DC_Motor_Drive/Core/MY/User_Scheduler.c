@@ -1,6 +1,7 @@
 #include "User_Scheduler.h"
 
 
+
 SysScanFlag_T __align(4)tSysScanFlag;//系统扫描标志位
 
 #define u16 uint16_t
@@ -32,12 +33,15 @@ void FuncRun(SysScanFlag_T *_tSysScanFlag)/*功能运行*/
 	{
 		_tSysScanFlag->ANA_Scan_Flag = 0;
 		
+		KEY_Value = Key_scan();
+		
 	}
 	
 	if(_tSysScanFlag->KEY_Scan_Flag)				//按键任务
 	{
 		_tSysScanFlag->KEY_Scan_Flag = 0;
 		LED0_TOG;
+		Test_KEY();
 		//get_adc_value();
 
 	}
@@ -45,17 +49,15 @@ void FuncRun(SysScanFlag_T *_tSysScanFlag)/*功能运行*/
 	if(_tSysScanFlag->CTR_Scan_Flag)				//控制扫描
 	{
 		_tSysScanFlag->CTR_Scan_Flag = 0;
-		//LED1_TOG;
+		LED1_TOG;
 		
 	}
 	
 	if(_tSysScanFlag->LAG_Scan_Flag)				//延时任务
 	{
 		_tSysScanFlag->LAG_Scan_Flag = 0;
-		BEEP_ON;
-		HAL_Delay(100);
-		BEEP_OFF;
-		//HAL_IWDG_Refresh(&hiwdg); //喂狗：重装看门狗数据为4095. 6.5s未喂狗，程序复位
+
+		HAL_IWDG_Refresh(&hiwdg); //喂狗：重装看门狗数据为4095. 6.5s未喂狗，程序复位
 		/*看门狗计算公式为  t = (64 * 4095) / 40kHz ≈ 6.5s*/
 	}	
 }

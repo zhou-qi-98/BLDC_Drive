@@ -35,3 +35,6 @@ dc_motor_drive\user_function.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ha
 dc_motor_drive\user_function.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 dc_motor_drive\user_function.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 dc_motor_drive\user_function.o: ../Core/Inc/usart.h
+dc_motor_drive\user_function.o: ..\Core\MY\key.h
+dc_motor_drive\user_function.o: ../Core/Inc/tim.h
+dc_motor_drive\user_function.o: ..\Core\MY\User_Function.h

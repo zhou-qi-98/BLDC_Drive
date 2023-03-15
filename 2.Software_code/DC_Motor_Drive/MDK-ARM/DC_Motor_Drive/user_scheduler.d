@@ -34,4 +34,10 @@ dc_motor_drive\user_scheduler.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_h
 dc_motor_drive\user_scheduler.o: ../Core/Inc/gpio.h
 dc_motor_drive\user_scheduler.o: ../Core/Inc/main.h
 dc_motor_drive\user_scheduler.o: ../Core/Inc/iwdg.h
+dc_motor_drive\user_scheduler.o: ..\Core\MY\User_Function.h
+dc_motor_drive\user_scheduler.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+dc_motor_drive\user_scheduler.o: ../Core/Inc/usart.h
+dc_motor_drive\user_scheduler.o: ..\Core\MY\key.h
+dc_motor_drive\user_scheduler.o: ../Core/Inc/tim.h
+dc_motor_drive\user_scheduler.o: ..\Core\MY\User_Function.h
 dc_motor_drive\user_scheduler.o: ..\Core\MY\Get_ADC_Value.h

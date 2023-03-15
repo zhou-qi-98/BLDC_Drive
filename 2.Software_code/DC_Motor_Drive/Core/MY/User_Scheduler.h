@@ -4,6 +4,8 @@
 #include "stm32f1xx_hal.h"
 #include "gpio.h"
 #include "iwdg.h"
+#include "User_Function.h"
+#include "key.h"
 #include "Get_ADC_Value.h"
 
 #define u8 uint8_t
@@ -25,6 +27,7 @@ typedef struct
 
 extern volatile uint8_t SYS_TIME1S_FLAG;//1MS时基标志
 extern SysScanFlag_T __align(4)tSysScanFlag;//系统扫描标志位
+extern uint8_t KEY_Value;//按键值
 
 void Schedule(void);/*任务调度*/
 void FuncRun(SysScanFlag_T *_tSysScanFlag);/*功能运行*/

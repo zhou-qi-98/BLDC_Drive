@@ -7,7 +7,20 @@
 
 #include "User_Function.h"
 
+uint8_t KEY_Value;
+uint8_t Direction,Count;
 
+
+void Test_KEY(void)
+{
+	//KEY_Value = Key_scan();
+	if(KEY_Value!=0)
+	{
+		user_main_info("按键%d被按下\r\n",KEY_Value);
+		KEY_Value = 0;
+	}
+		
+}
 
 
 
