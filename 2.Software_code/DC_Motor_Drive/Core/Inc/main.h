@@ -31,7 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+extern uint8_t KEY_Value;
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -61,6 +61,18 @@ void Error_Handler(void);
 #define KEY1_GPIO_Port GPIOA
 #define KEY2_Pin GPIO_PIN_5
 #define KEY2_GPIO_Port GPIOA
+#define UL_Pin GPIO_PIN_13
+#define UL_GPIO_Port GPIOB
+#define VL_Pin GPIO_PIN_14
+#define VL_GPIO_Port GPIOB
+#define WL_Pin GPIO_PIN_15
+#define WL_GPIO_Port GPIOB
+#define UH_Pin GPIO_PIN_8
+#define UH_GPIO_Port GPIOA
+#define VH_Pin GPIO_PIN_9
+#define VH_GPIO_Port GPIOA
+#define WH_Pin GPIO_PIN_10
+#define WH_GPIO_Port GPIOA
 #define IIC_SCL_Pin GPIO_PIN_15
 #define IIC_SCL_GPIO_Port GPIOA
 #define IIC_SDA_Pin GPIO_PIN_3

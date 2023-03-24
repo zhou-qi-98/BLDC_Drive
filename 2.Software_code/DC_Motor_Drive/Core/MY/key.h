@@ -3,6 +3,7 @@
 
 #include "gpio.h"
 #include "tim.h"
+#include "math.h"
 #include "usart.h"
 #include "User_Function.h"
 
@@ -12,7 +13,7 @@
 extern uint8_t Direction,Count;
 
 uint8_t Key_scan(void);
-void Get_EC11_Value(void);
+
 
 #endif
 

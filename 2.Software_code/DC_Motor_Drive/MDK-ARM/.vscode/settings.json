@@ -1,0 +1,11 @@
+{
+    "C_Cpp.errorSquiggles": "enabled",
+    "files.associations": {
+        "menu.h": "c",
+        "UART.C": "cpp",
+        "ESP8266.C": "cpp",
+        "iic_oled.h": "c",
+        "user_function.h": "c",
+        "bmp.h": "c"
+    }
+}

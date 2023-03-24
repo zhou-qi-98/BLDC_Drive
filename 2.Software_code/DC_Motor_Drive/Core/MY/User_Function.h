@@ -5,6 +5,7 @@
 #include "gpio.h"
 #include "usart.h"
 #include "key.h"
+#include "menu.h"
 
 
 /*利用可变参数空重新定义打印信息*/
@@ -27,5 +28,6 @@ extern int fputc(int ch, FILE *f);
 
 
 void Test_KEY(void);
+void display_UI(uint8_t index);
 
 #endif

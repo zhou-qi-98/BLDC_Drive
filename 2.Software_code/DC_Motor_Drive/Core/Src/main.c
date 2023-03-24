@@ -32,6 +32,8 @@
 #include "User_Function.h"
 #include "IIC_OLED.h"
 #include "key.h"
+#include "bmp.h"
+#include "Motor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,7 +43,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define VERSION      "A01.0B"//主版本号子版本号.修正版本号
+#define VERSION      "A01.0C"//主版本号子版本号.修正版本号
+
 /*---->
 版本更新历史
 A01.0B: 编码器功能初步测试通过 2023/3/15 21:39
@@ -127,16 +130,53 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(&htim2);//开启定时器
-	HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);     //启动计数
+  __HAL_TIM_CLEAR_IT(&htim3,TIM_IT_UPDATE);
+
+	HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);//启动计数
+  __HAL_TIM_ENABLE_IT(&htim3,TIM_IT_UPDATE);
+
 	HAL_ADCEx_Calibration_Start(&hadc1); //ADC校准
+
 	BEEP_OFF;
 	OLED_Init();			//OLED初始化
 	OLED_CLS();				//OLED清屏
-	OLED_ShowStr(16,4,(unsigned char*)"SYS init succeeded      ",1);
-	user_main_info("系统初始化成功！");
-	MX_IWDG_Init();
+	//OLED_ShowStr(16,4,(unsigned char*)"SYS init succeeded      ",1);
+	OLED_DrawBMP(0,0,128,8,BMP0);
+	user_main_info("System initialization succeeded！");
+	//MX_IWDG_Init();
+	
+	//HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
+  //HAL_TIMEx_PWMN_Start(&htim1,TIM_CHANNEL_1);
+  //HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
+  //HAL_TIMEx_PWMN_Start(&htim1,TIM_CHANNEL_2);
+
+	
+	
+
+	//TIM1->CCR1 = 50;//50%的占空比
+	//HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);//V相正波
+	/*
+				HAL_TIM_PWM_Stop(&htim1,TIM_CHANNEL_1);//U相不发波
+			HAL_TIMEx_PWMN_Stop(&htim1,TIM_CHANNEL_1);
+			
+			TIM1->CCR2 = 50;//50%的占空比
+			HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);//V相正波
+			
+			TIM1->CCR3 = 50;//50%的占空比
+			HAL_TIMEx_PWMN_Start(&htim1,TIM_CHANNEL_3);//V相正波
+			*/
+	
 	//MX_IWDG_Init();
 	//LED0_ON;
+	
+	
+	/*开始控制电机*/
+	//Motor_Stop();
+	//ROTOR_Pre_positioning(1);
+	//Motor_Start(1);
+	
+	
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -148,6 +188,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
 		Schedule();						/*调度器*/
 		FuncRun(&tSysScanFlag);/*功能运行*/
+		//Motor_Run(1);
 		
   }
   /* USER CODE END 3 */
@@ -207,8 +248,20 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	{
 			if (htim->Instance == htim2.Instance) {//定时器2中断,这里1ms中断一次
 					SYS_TIME1S_FLAG=1;
-			//LED1_TOG;
-	}
+	    }
+      if (htim->Instance == htim3.Instance)
+      {
+        
+        if( ((int)(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3)))== 0)
+        {
+          KEY_Value = 4;
+        }else
+        {
+          KEY_Value = 3;
+        }
+        //user_main_info("编码器%d",KEY_Value);
+      }
+
 }
 	
 

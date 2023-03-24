@@ -1,0 +1,6 @@
+--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Core/MY -I ..\Core\bldc
+-I.\RTE\_DC_Motor_Drive
+-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+-IC:\Users\ThinkPad\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include
+-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6
+-o dc_motor_drive\safety.o --omf_browse dc_motor_drive\safety.crf --depend dc_motor_drive\safety.d "..\Core\bldc\safety.c"

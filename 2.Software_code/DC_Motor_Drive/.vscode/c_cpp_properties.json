@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+                /*
+                "E:\\Code\\DC-motor-drive\\2.Software_code\\DC_Motor_Drive/Core/Inc",
+                "E:\\Code\\DC-motor-drive\\2.Software_code\\DC_Motor_Drive/Drivers/STM32F1xx_HAL_Driver/Inc",
+                "E:\\Code\\DC-motor-drive\\2.Software_code\\DC_Motor_Drive/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+                "E:\\Code\\DC-motor-drive\\2.Software_code\\DC_Motor_Drive/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                "E:\\Code\\DC-motor-drive\\2.Software_code\\DC_Motor_Drive/Drivers/CMSIS/Include",
+                "E:\\Code\\DC-motor-drive\\2.Software_code\\DC_Motor_Drive/Core/MY"
+                */
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__CC_ARM",
+                "USE_HAL_DRIVER",
+                "STM32F103x6"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "E:/AppsVisualStudio/VC/Tools/MSVC/14.32.31326/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}
