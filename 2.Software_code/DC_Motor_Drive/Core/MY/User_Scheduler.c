@@ -33,13 +33,7 @@ void FuncRun(SysScanFlag_T *_tSysScanFlag)/*功能运行*/
 	if(_tSysScanFlag->ANA_Scan_Flag)				//解析任务
 	{
 		_tSysScanFlag->ANA_Scan_Flag = 0;
-		
-		//KEY_Value = Key_scan();
-		Test_KEY();
-		//Get_EC11_D_value();
-		//Get_EC11_Value();
-		//EC11_Key_Value();
-		
+		Mune();//屏幕刷新，带按键检测	
 	}
 	
 	if(_tSysScanFlag->KEY_Scan_Flag)				//按键任务

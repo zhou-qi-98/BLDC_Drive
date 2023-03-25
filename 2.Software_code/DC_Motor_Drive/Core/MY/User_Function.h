@@ -27,7 +27,7 @@
 extern int fputc(int ch, FILE *f);
 
 
-void Test_KEY(void);
+void Mune(void);
 void display_UI(uint8_t index);
 
 #endif

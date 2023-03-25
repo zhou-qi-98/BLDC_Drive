@@ -47,6 +47,7 @@
 
 /*---->
 版本更新历史
+A01.0C: 多级菜单功能完成 2023/3/24 20:36
 A01.0B: 编码器功能初步测试通过 2023/3/15 21:39
 A01.0A: 调度器/OLED等外设测试通过 2023/3/15 20:49
 A01.09: 新增按键扫描函数(待验证) 2023/3/14 14:08
@@ -249,13 +250,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			if (htim->Instance == htim2.Instance) {//定时器2中断,这里1ms中断一次
 					SYS_TIME1S_FLAG=1;
 	    }
-      if (htim->Instance == htim3.Instance)
+      if (htim->Instance == htim3.Instance)//外部中断3来源于编码器
       {
         
-        if( ((int)(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3)))== 0)
+        if( ((int)(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3)))== 0)//反向旋转
         {
           KEY_Value = 4;
-        }else
+        }else//正向旋转
         {
           KEY_Value = 3;
         }

@@ -81,8 +81,8 @@ void fun_a21()
 {	
     OLED_ShowStr(0,2,">",1);
     OLED_ShowStr(16,0,"   Direction",1);
-    OLED_ShowStr(16,2,"[2] Forward",1);
-    OLED_ShowStr(16,4,"[3] Opposite ",1);
+    OLED_ShowStr(16,2,"[1] Forward",1);
+    OLED_ShowStr(16,4,"[2] Opposite ",1);
     //OLED_ShowStr(16,6,"[4] Back",1);
 
 }
@@ -91,8 +91,8 @@ void fun_a22()
 {	
     OLED_ShowStr(0,4,">",1);
     OLED_ShowStr(16,0,"   Direction",1);
-    OLED_ShowStr(16,2,"[2] Forward",1);
-    OLED_ShowStr(16,4,"[3] Opposite ",1);
+    OLED_ShowStr(16,2,"[1] Forward",1);
+    OLED_ShowStr(16,4,"[2] Opposite ",1);
     //OLED_ShowStr(16,6,"[4] Back",1);
 
 }

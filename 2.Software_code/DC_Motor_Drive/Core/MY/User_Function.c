@@ -18,7 +18,7 @@ uint8_t index= 0;//页面索引
 int EC11_oldnum=0,EC11_newnum=0;
 
 
-void Test_KEY(void)
+void Mune(void)
 {
 	KEY_Value = Key_scan();
 	switch (KEY_Value)
@@ -51,7 +51,7 @@ void Test_KEY(void)
 
 	if(KEY_Value!=0)
 	{
-		user_main_info("按键%d被按下\r\n",KEY_Value);
+		//user_main_info("按键%d被按下\r\n",KEY_Value);
 		KEY_Value = 0;
 	}
 		
