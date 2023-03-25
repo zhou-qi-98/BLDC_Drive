@@ -28,6 +28,8 @@ void fun_a21(void);
 void fun_a22(void);
 
 void fun_b21(void);
+void fun_b22(void);
+void fun_b23(void);
 
 void fun_c21(void);
 

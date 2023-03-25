@@ -14,9 +14,8 @@ extern key_table table[];
 void (*current_operation_index)(); //定义一个函数指针 用于控制屏幕的显示
 uint8_t index= 0;//页面索引
 
-//ec11的新旧值定义
-int EC11_oldnum=0,EC11_newnum=0;
 
+uint8_t Speed = 50;
 
 void Mune(void)
 {
